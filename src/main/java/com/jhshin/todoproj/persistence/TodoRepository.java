@@ -9,6 +9,7 @@ import java.util.List;
 
 @Repository
 public interface TodoRepository extends JpaRepository<TodoEntity, String> {
-    @Query("select * from TodoEntity t where t.userId = ?1")
-    List<TodoEntity> findByUserIdQuery(String userId);
+    List<TodoEntity> findByUserId(String userId);
+//    @Query("select t.id, t.title, t.userId, t.done from TodoEntity t where t.userId = ?1")
+//    List<TodoEntity> findByUserIdQuery(String userId);
 }

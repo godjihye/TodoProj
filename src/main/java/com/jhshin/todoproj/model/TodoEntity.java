@@ -9,6 +9,7 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import org.hibernate.annotations.GenericGenerator;
+import org.hibernate.annotations.UuidGenerator;
 
 @Builder
 @Data
@@ -20,6 +21,7 @@ public class TodoEntity {
     @Id
     @GeneratedValue(generator="system-uuid") // ID 자동생성
     @GenericGenerator(name="system-uuid", strategy="uuid")
+    @UuidGenerator
     private String id;
     private String title;
     private String userId;
