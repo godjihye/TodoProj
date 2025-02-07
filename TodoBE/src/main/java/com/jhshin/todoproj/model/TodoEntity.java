@@ -19,9 +19,9 @@ import org.hibernate.annotations.UuidGenerator;
 @Table(name="Todo")
 public class TodoEntity {
     @Id
-    @GeneratedValue(generator="system-uuid") // ID 자동생성
+    @GeneratedValue(generator="system-uuid")
     @GenericGenerator(name="system-uuid", strategy="uuid")
-    @UuidGenerator
+    //@UuidGenerator
     private String id;
     private String title;
     private String userId;
