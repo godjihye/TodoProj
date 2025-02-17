@@ -19,6 +19,7 @@ const Todo = (props) => {
   const turnOnReadOnly = (e) => {
     if (e.key == "Enter") {
       setReadOnly(true);
+      editItem(item);
     }
   };
   // deleteItem()함수 연결
@@ -30,13 +31,12 @@ const Todo = (props) => {
   // editItem() 연경
   const editItem = props.editItem;
   const editEventHandler = (e) => {
-    item.title = e.target.value;
-    editItem();
+    setItem({ ...item, title: e.target.value });
   };
   // checkbox Event handler
   const checkboxEventHandler = (e) => {
     item.done = e.target.checked;
-    editItem();
+    editItem(item);
   };
   return (
     <ListItem>
